@@ -1,0 +1,32 @@
+{
+  "records": [
+    {
+      "id": "BR-1",
+      "text": "本研究背景涉及遗传风险，但分析计划仅测量代谢标志物。",
+      "kind": "application"
+    },
+    {
+      "id": "BR-2",
+      "text": "同意书：仅限代谢指标研究；不得用于全基因组分析。",
+      "kind": "consent"
+    },
+    {
+      "id": "BR-3",
+      "text": "伦理补充：签署时捐赠者未成年，由监护人代签，有效期至成年后一年。",
+      "kind": "ethics-note"
+    }
+  ],
+  "samples": [
+    {
+      "id": "SMP-5",
+      "donor": "D-8",
+      "status": "allocated"
+    },
+    {
+      "id": "SMP-6",
+      "donor": "D-8",
+      "status": "unassigned"
+    }
+  ],
+  "case_id": "biobank-1"
+}
