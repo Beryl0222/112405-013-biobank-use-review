@@ -1,32 +1,132 @@
 {
+  "case_id": "case-biobank-use-review",
   "records": [
     {
-      "id": "BR-1",
-      "text": "本研究背景涉及遗传风险，但分析计划仅测量代谢标志物。",
-      "kind": "application"
+      "id": "BR-P1",
+      "kind": "proposal",
+      "text": "R1背景涉及遗传风险。阶段一测代谢标志物；阶段二拟全基因组测序，将可识别变异表发合作方。"
     },
     {
-      "id": "BR-2",
-      "text": "同意书：仅限代谢指标研究；不得用于全基因组分析。",
-      "kind": "consent"
+      "id": "BR-C1",
+      "kind": "consent",
+      "text": "D8监护人同意代谢研究，不包括全基因组。代签有效至成年后一年，不允许研究者再次直接联系捐赠者。"
     },
     {
-      "id": "BR-3",
-      "text": "伦理补充：签署时捐赠者未成年，由监护人代签，有效期至成年后一年。",
-      "kind": "ethics-note"
+      "id": "BR-C2",
+      "kind": "consent",
+      "text": "D9本人同意代谢和转录分析，不含全基因组；去身份的汇总统计可公开，个体结果共享须另行同意。"
+    },
+    {
+      "id": "BR-E1",
+      "kind": "ethics",
+      "text": "R1的背景遗传风险不等于实际测序；阶段二仍须独立核对，本意见不批准未授权用途。"
+    },
+    {
+      "id": "BR-P2",
+      "kind": "amendment",
+      "text": "R1v2取消全基因组，改做转录分析，代谢结果用于汇总论文，个体变异表不外发。"
+    },
+    {
+      "id": "BR-W1",
+      "kind": "withdrawal",
+      "text": "D8本人2026-08-03撤回今后代谢实验；已完成结果可保存，不得新增对外共享。"
+    },
+    {
+      "id": "BR-L1",
+      "kind": "lab",
+      "text": "R1已用T8A的60微升完成代谢，余40未动，T8B未分析。"
+    },
+    {
+      "id": "BR-L2",
+      "kind": "lab",
+      "text": "R2收到T8B后实际可用30微升，其余损耗，尚未做实验。"
+    },
+    {
+      "id": "BR-C3",
+      "kind": "consent",
+      "text": "八月五日D8补充同意余样用于转录分析，不同意全基因组及个体结果外发。"
+    },
+    {
+      "id": "BR-R1",
+      "kind": "return",
+      "text": "R1归还T8A余40微升，原容器号保留，继续用于新方案待核。"
+    },
+    {
+      "id": "BR-P3",
+      "kind": "proposal",
+      "text": "R2转录分析需D8样本50微升，不足时不接受混入D9补量。"
     }
   ],
-  "samples": [
+  "objects": {
+    "donors": [
+      {
+        "id": "D8",
+        "adult_on": "2025-08-01"
+      },
+      {
+        "id": "D9",
+        "adult_on": "2020-02-01"
+      }
+    ],
+    "containers": [
+      {
+        "id": "T8",
+        "donor": "D8",
+        "volume": 200
+      },
+      {
+        "id": "T8A",
+        "parent": "T8",
+        "volume": 100
+      },
+      {
+        "id": "T8B",
+        "parent": "T8",
+        "volume": 100
+      },
+      {
+        "id": "T9",
+        "donor": "D9",
+        "volume": 120
+      }
+    ],
+    "operations": [
+      {
+        "id": "O11",
+        "research": "R1",
+        "source": "BR-P1",
+        "consumes": 60
+      },
+      {
+        "id": "O12",
+        "research": "R1",
+        "source": "BR-P2",
+        "consumes": 50
+      },
+      {
+        "id": "O21",
+        "research": "R2",
+        "source": "BR-P3",
+        "consumes": 50
+      }
+    ]
+  },
+  "existing": [
     {
-      "id": "SMP-5",
-      "donor": "D-8",
-      "status": "allocated"
+      "id": "A81",
+      "container": "T8A",
+      "research": "R1",
+      "state": "issued",
+      "date": "2026-08-02",
+      "source": "BR-C1"
     },
     {
-      "id": "SMP-6",
-      "donor": "D-8",
-      "status": "unassigned"
+      "id": "A82",
+      "container": "T8B",
+      "research": "R2",
+      "state": "issued",
+      "date": "2026-08-02",
+      "source": "BR-C1"
     }
-  ],
-  "case_id": "biobank-1"
+  ]
 }
